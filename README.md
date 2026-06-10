@@ -22,3 +22,16 @@ A desktop-based CRUD (Create, Read, Update, Delete) application built using Java
 ---
 
 ### 📂 Project Structure
+
+---
+
+### 📋 Database Schema
+Database name: `studentdb`
+
+```sql
+CREATE TABLE students (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    age INT,
+    course VARCHAR(50)
+);
