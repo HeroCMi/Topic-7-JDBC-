@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.example.demo.Controller">
+    <top>
+        <Label text="Student Record Management System"
+               style="-fx-font-size: 20; -fx-font-weight: bold; -fx-padding: 15;"/>
+    </top>
+
+    <center>
+        <VBox spacing="15" alignment="CENTER" style="-fx-padding: 20;">
+
+            <!-- INPUT FIELDS -->
+            <TextField fx:id="txtName" promptText="Enter Full Name" prefWidth="400"/>
+            <TextField fx:id="txtCourse" promptText="Enter Course (e.g. BSIT, BSBA)" prefWidth="400"/>
+
+            <!-- ✅ FIXED: ChoiceBox uses setPromptText() in code, NOT in FXML -->
+            <ChoiceBox fx:id="cbYear" prefWidth="400"/>
+
+            <!-- BUTTONS -->
+            <HBox spacing="10" style="-fx-padding: 10 0;">
+                <Button text="ADD" onAction="#addStudent" style="-fx-background-color: #2196F3; -fx-text-fill: white; -fx-padding: 8 20;"/>
+                <Button text="UPDATE" onAction="#updateStudent" style="-fx-background-color: #FFC107; -fx-text-fill: black; -fx-padding: 8 20;"/>
+                <Button text="DELETE" onAction="#deleteStudent" style="-fx-background-color: #F44336; -fx-text-fill: white; -fx-padding: 8 20;"/>
+                <Button text="CLEAR" onAction="#clear" style="-fx-background-color: #9E9E9E; -fx-text-fill: white; -fx-padding: 8 20;"/>
+            </HBox>
+
+            <!-- TABLE VIEW -->
+            <TableView fx:id="table" prefHeight="350" prefWidth="500">
+                <columns>
+                    <TableColumn text="ID" fx:id="colId" prefWidth="50"/>
+                    <TableColumn text="Name" fx:id="colName" prefWidth="180"/>
+                    <TableColumn text="Course" fx:id="colCourse" prefWidth="120"/>
+                    <TableColumn text="Year Level" fx:id="colYear" prefWidth="100"/>
+                </columns>
+            </TableView>
+
+        </VBox>
+    </center>
+</BorderPane>
